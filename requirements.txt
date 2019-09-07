@@ -9,9 +9,11 @@ itsdangerous==1.1.0
 Jinja2==2.10.1
 MarkupSafe==1.1.1
 pycparser==2.19
+pyTelegramBotAPI==3.6.6
 python-telegram-bot==12.0.0
+requests==2.7.0
 six==1.12.0
+telebot==0.0.3
 tornado==6.0.3
 uWSGI==2.0.18
 Werkzeug==0.15.5
-git commit -m "remove file1.txt"
