@@ -44,7 +44,7 @@ def webhook_handler():
 
 @app.route('/set_webhook', methods=['GET', 'POST'])
 def set_webhook():
-    s = bot.setWebhook('https://%s:443/HOOK' % URL, certificate=open('/etc/ssl/server.crt', 'rb'))
+    s = bot.setWebhook('https://%s:443/HOOK' % URL, certificate=open('/etc/ssl/dazamato-tele/server.crt', 'rb'))
     if s:
         print(s)
         return "webhook setup ok"
