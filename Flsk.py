@@ -44,15 +44,16 @@ def webhook_handler():
 
 @app.route('/set_webhook', methods=['GET', 'POST'])
 def set_webhook():
-    s = bot.setWebhook('{URL}{HOOK}'.format(URL=URL, HOOK=TOKEN))
+    s = bot.setWebhook('https://%s:443/HOOK' % URL, certificate=open('/etc/ssl/server.crt', 'rb'))
     if s:
+        print(s)
         return "webhook setup ok"
     else:
         return "webhook setup failed"
 
 @app.route('/')
 def index():
-    return '<h1>Hello</h1>'
+    return '<h1>Hello_!!</h1>'
 
 
 if __name__ == '__main__':
