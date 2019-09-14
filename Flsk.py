@@ -1,8 +1,10 @@
 
 from flask import Flask, request
+from flask_sqlalchemy import SQLAlchemy
 import telegram
 from credentials import bot_token, bot_user_name,URL
-from mastermind import get_response
+import os
+# from mastermind import get_response
 
 
 global bot
@@ -12,6 +14,10 @@ bot = telegram.Bot(token=TOKEN)
 
 app = Flask(__name__)
 
+app.config.from_object(os.environ['APP_SETTINGS'])
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+db = SQLAlchemy(app)
+from models import Book
 
 
 
