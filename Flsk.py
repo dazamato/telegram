@@ -22,14 +22,25 @@ import models
 
 
 @app.route('/HOOK', methods=['POST', 'GET'])
+
+
+
 def webhook_handler():
     if request.method == "POST":
         update = telegram.Update.de_json(request.get_json(force=True), bot)
+
         try:
             chat_id = update.message.chat.id
             text = update.message.text
             userid = update.message.from_user.id
             username = update.message.from_user.username
+
+            # def start(update, context):
+            #     context.bot.send_message(chat_id=update.message.chat_id, text="I'm a bot, please talk to me!")
+            #
+            # start_handler = CommandHandler('start', start)
+            # dispatcher.add_handler(start_handler)
+            # updater.start_polling()
             location_keyboard = telegram.KeyboardButton(text="send_location", request_location=True)
             contact_keyboard = telegram.KeyboardButton(text="send_contact", request_contact=True)
             custom_keyboard = [[location_keyboard, contact_keyboard]]
