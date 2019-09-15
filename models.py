@@ -1,4 +1,6 @@
 from Flsk import db
+import datetime
+
 
 class BaseModel(db.Model):
     """Base data model for all objects"""

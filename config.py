@@ -7,7 +7,7 @@ class Config(object):
     TESTING = False
     CSRF_ENABLED = True
     SECRET_KEY = 'ZeXvwdp8oh9juQ4TMgmpdbksdTWhZ_8e'
-    SQLALCHEMY_DATABASE_URI = os.environ['postgresql://localhost/myteledb']
+    SQLALCHEMY_DATABASE_URI = os.environ['DATABASE_URL']
 
 
 class ProductionConfig(Config):
